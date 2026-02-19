@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.caja-login {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 15px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+}
+
+.caja-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px; 
+}
+
+.logo {
+    width: 140px; 
+    height: 140px;
+    object-fit: contain; 
+    border-radius: 50%; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+h2 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.inputs {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f1c40f; 
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.2);
+}
+
+.btn-sesion {
+    width: 100%;
+    padding: 14px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.btn-sesion:hover {
+    background-color: #d68910;
+}
+
+.botones-rrss {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.botones-rrss button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.btn-google { color: #db4437; }
+.btn-facebook { color: #4267B2; }
+
+.botones-rrss button:hover {
+    background-color: #f5f5f5;
+}
+
+.links {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #888;
+}
+
+.links a {
+    color: #007bff; 
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 0 5px;
+    color: #ccc;
+}
