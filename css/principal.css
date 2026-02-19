@@ -36,6 +36,33 @@ body {
     border-radius: 4px;
 }
 
+/* SECCIÓN HERO */
+.hero-inicio {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('../img/fondo-hero2-principal.jpg'); 
+    
+    height: 600px; 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-texto h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra para que se lea mejor */
+}
+
+.hero-texto p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
 .contenido {
     padding: 40px;
     text-align: center;
