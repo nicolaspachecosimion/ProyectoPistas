@@ -133,49 +133,89 @@ body {
     font-weight: 300;
 }
 
+/* --- SECCIÓN DE CONTENIDO --- */
 .contenido {
-    padding: 40px;
+    padding: 40px 5%;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
-h1 { margin-bottom: 10px; color: #333; }
+.contenido h1 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 2.5rem;
+}
 
 .caja-deportes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
     margin-top: 30px;
 }
 
 .tarjeta-deporte {
     background-color: white;
-    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
 }
 
 .tarjeta-deporte:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(243, 156, 18, 0.3);
+    border-color: #f39c12;
 }
 
-.tarjeta-deporte h3 {
-    margin-bottom: 10px;
+.imagen-deporte {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    overflow: hidden;
+    background-color: #333; 
+}
+
+.imagen-deporte img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.info-deporte {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-deporte h3 {
+    margin: 0;
     color: #2c3e50;
+    font-size: 1.2rem;
 }
 
-.tarjeta-deporte p {
+.info-deporte p {
+    margin: 0;
     color: #7f8c8d;
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    height: 40px; 
 }
 
 .btn-reservar {
-    background-color: #f39c12; 
+    background-color: #f39c12;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #000;
+    color: #f39c12;
 }
