@@ -6,6 +6,20 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* --- CONFIGURACIÓN DE SCROLL --- */
+html {
+    scroll-behavior: smooth; /* Para que el desplazamiento sea fluido */
+}
+
+#inicio-pagina {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+    visibility: hidden; /* El div existe pero es invisible y no ocupa espacio */
+}
+
 body {
     background-color: #f4f7f6;
     display: flex;
