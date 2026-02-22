@@ -1,0 +1,5 @@
+@import url('deportes.css');
+
+.hero-futbol {
+    background-image: url('../img/hero-futbol.jpg');
+}

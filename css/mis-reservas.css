@@ -2,7 +2,7 @@
 .contenido-reservas {
     padding: 50px 5%;
     max-width: 1000px;
-    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    margin: 0 auto;
 }
 
 .cabecera-reservas {
@@ -33,7 +33,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     padding: 25px;
-    border-left: 6px solid #ccc; /* Borde izquierdo de color para estado */
+    border-left: 6px solid #ccc; 
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -45,7 +45,6 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Si la reserva está activa, el borde es el dorado del club */
 .tarjeta-reserva.activa {
     border-left-color: #f39c12;
 }
