@@ -1,0 +1,5 @@
+@import url('deportes.css');
+
+.hero-padel {
+    background-image: url('../img/hero-padel.jpg');
+}
