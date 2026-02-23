@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Fútbol - San Isidro</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/baloncesto.css">
+</head>
+<body>
+
+    <div id="inicio-pagina"></div>
+    
+    <nav class="caja-nav">
+        <div class="nav-logo">
+            <a href="principal.html">
+                <img src="../img/logo.png" alt="Logo San Isidro" class="logo-nav">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio-pagina">Inicio</a></li>
+            <li><a href="mis-reservas.html">Mis Reservas</a></li>
+            <li><a href="#">Torneos</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="login.html" class="btn-salir">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-deporte-base hero-baloncesto">
+        <h1>Pistas de Baloncesto</h1>
+        <p>Pabellón cubierto y canastas exteriores para entrenar o jugar tus pachangas.</p>
+    </header>
+
+    <main class="contenido-deporte">
+        
+        <section class="calendario-mes">
+            <h2>Disponibilidad en Febrero</h2>
+            
+            <div class="leyenda">
+                <div class="leyenda-item">
+                    <span class="caja-color color-disponible"></span> Disponible
+                </div>
+                <div class="leyenda-item">
+                    <span class="caja-color color-ocupado"></span> Completo
+                </div>
+            </div>
+
+<div class="grid-calendario">
+                <div class="dia-semana">Lun</div>
+                <div class="dia-semana">Mar</div>
+                <div class="dia-semana">Mié</div>
+                <div class="dia-semana">Jue</div>
+                <div class="dia-semana">Vie</div>
+                <div class="dia-semana">Sáb</div>
+                <div class="dia-semana">Dom</div>
+
+                <div class="dia vacio"></div>
+                <div class="dia vacio"></div>
+                <div class="dia vacio"></div>
+                <div class="dia vacio"></div>
+                <div class="dia vacio"></div>
+                <div class="dia vacio"></div>
+                <div class="dia disponible">1</div>
+                
+                <div class="dia ocupado">2</div>
+                <div class="dia ocupado">3</div>
+                <div class="dia disponible">4</div>
+                <div class="dia ocupado">5</div>
+                <div class="dia ocupado">6</div>
+                <div class="dia disponible">7</div>
+                <div class="dia ocupado">8</div>
+                
+                <div class="dia ocupado">9</div>
+                <div class="dia disponible">10</div>
+                <div class="dia ocupado">11</div>
+                <div class="dia disponible">12</div>
+                <div class="dia ocupado">13</div>
+                <div class="dia ocupado">14</div>
+                <div class="dia disponible">15</div>
+
+                <div class="dia disponible">16</div>
+                <div class="dia ocupado">17</div>
+                <div class="dia disponible">18</div>
+                <div class="dia ocupado">19</div>
+                <div class="dia ocupado">20</div>
+                <div class="dia disponible">21</div>
+                <div class="dia disponible">22</div>
+
+                <div class="dia ocupado">23</div>
+                <div class="dia ocupado">24</div>
+                <div class="dia disponible">25</div>
+                <div class="dia disponible">26</div>
+                <div class="dia disponible">27</div>
+                <div class="dia ocupado">28</div>
+            </div>
+        </section>
+
+        <section class="reserva-futura">
+            <h2>¿Quieres reservar para otro mes?</h2>
+            <p>Utiliza este buscador para seleccionar fechas futuras y consultar si hay pistas libres.</p>
+            
+            <form action="#" class="formulario-fecha">
+                <div class="grupo-form">
+                    <label for="fecha-futura">Selecciona una fecha:</label>
+                    <input type="date" id="fecha-futura" required> 
+                </div>
+                
+                <div class="grupo-form">
+                    <label for="tipo-pista">Tipo de pista:</label>
+                    <select id="tipo-pista">
+                        <option value="pabellon">Pabellón Cubierto</option>
+                        <option value="exterior1">Pista Exterior 1</option>
+                        <option value="exterior2">Pista Exterior 2</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-buscar">Ver Disponibilidad</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="caja-footer">
+            <div class="columna-footer">
+                <a href="principal.html">
+                    <img src="../img/logo.png" alt="Logo San Isidro" class="logo-footer">
+                </a>
+                <p>El mejor club deportivo para disfrutar, competir y mejorar tu nivel en instalaciones de primera calidad.</p>
+            </div>
+            <div class="columna-footer">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio-pagina">Inicio</a></li>
+                    <li><a href="mis-reservas.html">Mis Reservas</a></li>
+                    <li><a href="#">Normativa del Club</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>📍 Calle Rda. Palmeras, 123</p>
+                <p>📞 600 123 456</p>
+                <p>✉️ info@sanisidro.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Pistas Deportivas San Isidro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

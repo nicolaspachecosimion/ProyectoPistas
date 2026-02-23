@@ -1,0 +1,5 @@
+@import url('deportes.css');
+
+.hero-baloncesto {
+    background-image: url('../img/hero-baloncesto2.jpg');
+}
