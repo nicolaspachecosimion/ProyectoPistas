@@ -32,92 +32,193 @@
     </header>
 
     <main class="contenido-deporte">
-        
-        <section class="calendario-mes">
-            <h2>Disponibilidad en Febrero</h2>
-            
-            <div class="leyenda">
-                <div class="leyenda-item">
-                    <span class="caja-color color-disponible"></span> Disponible
-                </div>
-                <div class="leyenda-item">
-                    <span class="caja-color color-ocupado"></span> Completo
-                </div>
-            </div>
-
-<div class="grid-calendario">
-                <div class="dia-semana">Lun</div>
-                <div class="dia-semana">Mar</div>
-                <div class="dia-semana">Mié</div>
-                <div class="dia-semana">Jue</div>
-                <div class="dia-semana">Vie</div>
-                <div class="dia-semana">Sáb</div>
-                <div class="dia-semana">Dom</div>
-
-                <div class="dia vacio"></div>
-                <div class="dia vacio"></div>
-                <div class="dia vacio"></div>
-                <div class="dia vacio"></div>
-                <div class="dia vacio"></div>
-                <div class="dia vacio"></div>
-                <div class="dia disponible">1</div>
-                
-                <div class="dia ocupado">2</div>
-                <div class="dia ocupado">3</div>
-                <div class="dia disponible">4</div>
-                <div class="dia ocupado">5</div>
-                <div class="dia ocupado">6</div>
-                <div class="dia disponible">7</div>
-                <div class="dia ocupado">8</div>
-                
-                <div class="dia ocupado">9</div>
-                <div class="dia disponible">10</div>
-                <div class="dia ocupado">11</div>
-                <div class="dia disponible">12</div>
-                <div class="dia ocupado">13</div>
-                <div class="dia ocupado">14</div>
-                <div class="dia disponible">15</div>
-
-                <div class="dia disponible">16</div>
-                <div class="dia ocupado">17</div>
-                <div class="dia disponible">18</div>
-                <div class="dia ocupado">19</div>
-                <div class="dia ocupado">20</div>
-                <div class="dia disponible">21</div>
-                <div class="dia disponible">22</div>
-
-                <div class="dia ocupado">23</div>
-                <div class="dia ocupado">24</div>
-                <div class="dia disponible">25</div>
-                <div class="dia disponible">26</div>
-                <div class="dia disponible">27</div>
-                <div class="dia ocupado">28</div>
-            </div>
-        </section>
-
-        <section class="reserva-futura">
-            <h2>¿Quieres reservar para otro mes?</h2>
-            <p>Utiliza este buscador para seleccionar fechas futuras y consultar si hay pistas libres.</p>
-            
-            <form action="#" class="formulario-fecha">
-                <div class="grupo-form">
-                    <label for="fecha-futura">Selecciona una fecha:</label>
-                    <input type="date" id="fecha-futura" required> 
-                </div>
-                
-                <div class="grupo-form">
-                    <label for="tipo-pista">Tipo de pista:</label>
-                    <select id="tipo-pista">
+        <section class="reserva-semana">
+            <div class="controles-reserva">
+                <div class="grupo-control">
+                    <label for="tipo-pista"><strong>Selecciona la Pista:</strong></label>
+                    <select id="tipo-pista" class="input-reserva">
                         <option value="pabellon">Pabellón Cubierto</option>
                         <option value="exterior1">Pista Exterior 1</option>
                         <option value="exterior2">Pista Exterior 2</option>
                     </select>
                 </div>
-                
-                <button type="submit" class="btn-buscar">Ver Disponibilidad</button>
-            </form>
+            </div>
+
+            <div class="cabecera-horas">
+                <h2>Horarios de esta semana</h2>
+                <div class="leyenda">
+                    <div class="leyenda-item"><span class="caja-color color-disponible"></span> Disponible</div>
+                    <div class="leyenda-item"><span class="caja-color color-ocupado"></span> Completo</div>
+                </div>
+            </div>
+
+            <div class="semana-grid">
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Lunes 16</div>
+                    <div class="lista-horas">
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">09:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">10:00</div></a>
+                        <div class="hora ocupado">11:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">12:00</div></a>
+                        <div class="hora ocupado">13:00</div>
+                        <div class="hora ocupado">14:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <div class="hora ocupado">16:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">17:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">18:00</div></a>
+                        <div class="hora ocupado">19:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">20:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">21:00</div></a>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Martes 17</div>
+                    <div class="lista-horas">
+                        <div class="hora ocupado">09:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">10:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">11:00</div></a>
+                        <div class="hora ocupado">12:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">13:00</div></a>
+                        <div class="hora ocupado">14:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">16:00</div></a>
+                        <div class="hora ocupado">17:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">18:00</div></a>
+                        <div class="hora ocupado">19:00</div>
+                        <div class="hora ocupado">20:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">21:00</div></a>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Miércoles 18</div>
+                    <div class="lista-horas">
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">09:00</div></a>
+                        <div class="hora ocupado">10:00</div>
+                        <div class="hora ocupado">11:00</div>
+                        <div class="hora ocupado">12:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">13:00</div></a>
+                        <div class="hora ocupado">14:00</div>
+                        <div class="hora ocupado">15:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">16:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">17:00</div></a>
+                        <div class="hora ocupado">18:00</div>
+                        <div class="hora ocupado">19:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">20:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">21:00</div></a>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Jueves 19</div>
+                    <div class="lista-horas">
+                        <div class="hora ocupado">09:00</div>
+                        <div class="hora ocupado">10:00</div>
+                        <div class="hora ocupado">11:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">12:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">13:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">14:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <div class="hora ocupado">16:00</div>
+                        <div class="hora ocupado">17:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">18:00</div></a>
+                        <div class="hora ocupado">19:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">20:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">21:00</div></a>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Viernes 20</div>
+                    <div class="lista-horas">
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">09:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">10:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">11:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">12:00</div></a>
+                        <div class="hora ocupado">13:00</div>
+                        <div class="hora ocupado">14:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">16:00</div></a>
+                        <div class="hora ocupado">17:00</div>
+                        <div class="hora ocupado">18:00</div>
+                        <div class="hora ocupado">19:00</div>
+                        <div class="hora ocupado">20:00</div>
+                        <div class="hora ocupado">21:00</div>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Sábado 21</div>
+                    <div class="lista-horas">
+                        <div class="hora ocupado">09:00</div>
+                        <div class="hora ocupado">10:00</div>
+                        <div class="hora ocupado">11:00</div>
+                        <div class="hora ocupado">12:00</div>
+                        <div class="hora ocupado">13:00</div>
+                        <div class="hora ocupado">14:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">16:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">17:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">18:00</div></a>
+                        <div class="hora ocupado">19:00</div>
+                        <div class="hora ocupado">20:00</div>
+                        <div class="hora ocupado">21:00</div>
+                    </div>
+                </div>
+                <div class="columna-dia">
+                    <div class="cabecera-dia">Domingo 22</div>
+                    <div class="lista-horas">
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">09:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">10:00</div></a>
+                        <div class="hora ocupado">11:00</div>
+                        <div class="hora ocupado">12:00</div>
+                        <div class="hora ocupado">13:00</div>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">14:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">15:00</div></a>
+                        <a href="pista-reservada.html" class="enlace-reservar"><div class="hora disponible">16:00</div></a>
+                        <div class="hora ocupado">17:00</div>
+                        <div class="hora ocupado">18:00</div>
+                        <div class="hora ocupado">19:00</div>
+                        <div class="hora ocupado">20:00</div>
+                        <div class="hora ocupado">21:00</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section class="reserva-futura">
+            <h2>¿Quieres reservar para otro día?</h2>
+            <p>Utiliza este buscador para seleccionar fechas futuras y la hora exacta en la que quieres jugar.</p>
+            <form action="#" class="formulario-fecha">
+                <div class="grupo-form">
+                    <label for="fecha-futura">Día:</label>
+                    <input type="date" id="fecha-futura" required> 
+                </div>
+                <div class="grupo-form">
+                    <label for="hora-futura">Hora:</label>
+                    <select id="hora-futura">
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="21:00">21:00</option>
+                    </select>
+                </div>
+                <div class="grupo-form">
+                    <label for="tipo-pista-futura">Pista:</label>
+                    <select id="tipo-pista-futura">
+                        <option value="pabellon">Pabellón Cubierto</option>
+                        <option value="exterior1">Pista Exterior 1</option>
+                        <option value="exterior2">Pista Exterior 2</option>
+                    </select>
+                </div>
+                <a href="pista-reservada.html" class="btn-buscar">Buscar y Reservar</a>
+            </form>
+        </section>
     </main>
 
     <footer class="pie-pagina">
