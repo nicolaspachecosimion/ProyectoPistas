@@ -6,7 +6,6 @@
 }
 
 body {
-    /* Mismo fondo oscuro elegante */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('../img/fondo-login3.jpg');
     background-size: cover;
@@ -25,7 +24,7 @@ body {
     border-radius: 15px; 
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     width: 100%;
-    max-width: 400px; /* Tamaño intermedio, ni tan ancho como registro ni tan fino como login */
+    max-width: 400px; 
     text-align: center;
     position: relative;
     animation: aparecer 0.4s ease-out;
@@ -59,7 +58,7 @@ body {
     font-size: 14px;
     margin-bottom: 25px;
     line-height: 1.5;
-    padding: 0 10px; /* Para que el texto no toque los bordes */
+    padding: 0 10px;
 }
 
 .inputs {
