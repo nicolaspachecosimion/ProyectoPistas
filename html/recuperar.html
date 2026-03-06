@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - San Isidro</title>
+    <link rel="stylesheet" href="../css/recuperar.css">
+</head>
+<body>
+
+    <div class="caja-recuperar">
+        <div class="caja-logo">
+            <img src="../img/logo.png" alt="Logo Reserva Pista San Isidro" class="logo">
+        </div>
+
+        <h2>Recuperar Contraseña</h2>
+        <p class="subtitulo">Introduce tu email y te enviaremos un enlace para crear una nueva contraseña.</p>
+        
+        <form action="login.html" method="POST">
+            
+            <div class="inputs">
+                <label for="email">Email registrado:</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+
+            <button type="submit" class="btn-recuperar">Enviar Enlace</button>
+            
+            <div class="links">
+                <p>¿Recordaste tu contraseña? <a href="login.html">Vuelve al Login</a></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
