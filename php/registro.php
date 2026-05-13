@@ -1,3 +1,30 @@
+<?php
+include 'conexion.php';
+
+$mensaje = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmar_password = $_POST['confirmar_password'];
+
+    if ($password !== $confirmar_password) {
+        $mensaje = "<p style='color: #e74c3c; text-align: center; margin-bottom: 15px; font-weight: bold;'>Las contraseñas no coinciden.</p>";
+    } else {
+        $sql = "INSERT INTO usuarios (nombre, email, password) VALUES ('$nombre', '$email', '$password')";
+        
+        if ($conexion->query($sql) === TRUE) {
+            $mensaje = "<p style='color: #2ecc71; text-align: center; margin-bottom: 15px; font-weight: bold;'>¡Registro exitoso! Ya puedes <a href='login.php'>iniciar sesión</a>.</p>";
+        } else {
+            $mensaje = "<p style='color: #e74c3c; text-align: center; margin-bottom: 15px; font-weight: bold;'>Error: " . $conexion->error . "</p>";
+        }
+    }
+    $conexion->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,9 +42,11 @@
 
         <h2>Crea tu Cuenta</h2>
         <p class="subtitulo">Únete al club y empieza a reservar tus pistas.</p>
+
+        <?php echo $mensaje; ?>
         
-        <form action="principal.html" method="POST">
-            
+        <form action="registro.php" method="POST">   
+
             <div class="inputs">
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
@@ -35,7 +64,7 @@
 
             <div class="inputs">
                 <label for="confirm_password">Repetir Contraseña:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required placeholder="Vuelve a escribir la contraseña">
+                <input type="password" id="confirmar_password" name="confirmar_password" required placeholder="Vuelve a escribir la contraseña">
             </div>
 
             <div class="checkbox-terminos">
@@ -46,7 +75,7 @@
             <button type="submit" class="btn-registro">Completar Registro</button>
             
             <div class="links">
-                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión aquí</a></p>
+                <p>¿Ya tienes una cuenta? <a href="login.php">Inicia Sesión aquí</a></p>
             </div>
         </form>
     </div>
