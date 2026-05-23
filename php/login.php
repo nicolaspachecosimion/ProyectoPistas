@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['nombre'] = $usuario['nombre'];
         
         // Lo redirigimos a la página principal
-        header("Location: ../html/principal.html"); 
+        header("Location: principal.php"); 
         exit(); 
         
     } else {
@@ -81,9 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn-sesion">Iniciar Sesión</button>
             
             <div class="links">
-                <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+                <a href="recuperar.php">¿Olvidaste tu contraseña?</a>
                 <span class="separator">|</span>
-                <a href="../php/registro.php">Regístrate aquí</a>
+                <a href="registro.php">Regístrate aquí</a>
             </div>
         </form>
     </div>

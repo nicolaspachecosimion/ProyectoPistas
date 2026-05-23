@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Si la variable de sesión 'id_usuario' no existe, es que no han pasado por el login
+if (!isset($_SESSION['id_usuario'])) {
+    // Redirige al login
+    header("Location: login.php");
+    exit();
+}
+
+$nombre_usuario = $_SESSION['nombre'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,21 +25,22 @@
     <div id="inicio-pagina"></div>
     <nav class="caja-nav"> 
         <div class="nav-logo">
-            <a href="principal.html">
+            <a href="principal.php">
                 <img src="../img/logo.png" alt="Logo San Isidro" class="logo-nav">
             </a>
         </div>
         <ul class="nav-links">
             <li><a href="#inicio-pagina">Inicio</a></li> 
-            <li><a href="mis-reservas.html">Mis Reservas</a></li>
-            <li><a href="torneos.html">Torneos</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="../php/login.php" class="btn-salir">Cerrar Sesión</a></li>
+            <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
+            <li><a href="../html/torneos.html">Torneos</a></li>
+            <li><a href="../html/perfil.html">Perfil</a></li>
+            <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>
         </ul>
     </nav>
 
     <div class="hero-inicio">
         <div class="hero-texto">
+            <h2>¡Hola, <?php echo $nombre_usuario; ?>!</h2>
             <h2>Vive el Deporte en San Isidro</h2>
             <p>Reserva tus pistas y compite con los mejores</p>
         </div>
@@ -57,7 +71,7 @@
                     <div class="info-deporte">
                         <h3>Pádel</h3>
                         <p>Muro y Cristal de última generación</p>
-                        <a href="padel.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="../html/padel.html" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -68,7 +82,7 @@
                     <div class="info-deporte">
                         <h3>Tenis</h3>
                         <p>Tierra batida y superficies rápidas</p>
-                        <a href="tenis.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="../html/tenis.html" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -79,7 +93,7 @@
                     <div class="info-deporte">
                         <h3>Baloncesto</h3>
                         <p>Pabellón cubierto y canastas exteriores</p>
-                        <a href="baloncesto.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="../html/baloncesto.html" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -90,7 +104,7 @@
                     <div class="info-deporte">
                         <h3>Natación</h3>
                         <p>Piscina olímpica y clases dirigidas</p>
-                        <a href="natacion.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="../html/natacion.html" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -136,7 +150,7 @@
         <div class="caja-footer">
             
             <div class="columna-footer">
-                <a href="principal.html">
+                <a href="principal.php">
                     <img src="../img/logo.png" alt="Logo San Isidro" class="logo-footer">
                 </a>
                 <p>El mejor club deportivo para disfrutar, competir y mejorar tu nivel en instalaciones de primera calidad.</p>
@@ -146,9 +160,9 @@
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="#inicio-pagina">Inicio</a></li>
-                    <li><a href="mis-reservas.html">Mis Reservas</a></li>
-                    <li><a href="torneos.html">Torneos</a></li>
-                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
+                    <li><a href="../html/torneos.html">Torneos</a></li>
+                    <li><a href="../html/perfil.html">Perfil</a></li>
                 </ul>
             </div>
 
