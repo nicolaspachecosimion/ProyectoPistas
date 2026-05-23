@@ -33,7 +33,7 @@ $nombre_usuario = $_SESSION['nombre'];
             <li><a href="#inicio-pagina">Inicio</a></li> 
             <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
             <li><a href="../html/torneos.html">Torneos</a></li>
-            <li><a href="../html/perfil.html">Perfil</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
             <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>
         </ul>
     </nav>
