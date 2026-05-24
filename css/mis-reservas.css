@@ -22,9 +22,13 @@
 }
 
 .panel-reservas {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important; 
+    gap: 30px;
+    align-items: start;
+    width: 100%;
+    max-width: 1200px; /* Le damos más espacio al contenedor principal para que las tarjetas crezcan */
+    margin: 0 auto; /* Centra el panel en la pantalla */
 }
 
 /* Estilo de la Tarjeta Horizontal */
@@ -116,4 +120,26 @@
 .btn-secundario:hover {
     background-color: #e74c3c;
     color: white;
+}
+
+/* Mensaje de alerta al cancelar reserva */
+.alerta-borrado {
+    background-color: #d4edda;
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    animation: aparecer 0.4s ease-out;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -1,0 +1,156 @@
+<?php
+// 1. Proteger la página con la sesión
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+include 'conexion.php';
+$id_usuario = $_SESSION['id_usuario'];
+
+// 2. Consulta avanzada con JOIN para traer los nombres del deporte y de la pista
+$sql = "SELECT r.id_reserva, r.fecha, r.hora, r.estado, p.nombre AS pista_nombre, d.nombre AS deporte_nombre 
+        FROM reservas r
+        INNER JOIN pistas p ON r.id_pista = p.id_pista
+        INNER JOIN deportes d ON p.id_deporte = d.id_deporte
+        WHERE r.id_usuario = '$id_usuario'
+        ORDER BY r.fecha ASC, r.hora ASC";
+
+$resultado = $conexion->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas - Pistas San Isidro</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/mis-reservas.css?v=2">
+</head>
+<body>
+
+    <div id="inicio-pagina"></div>
+    
+    <nav class="caja-nav"> 
+        <div class="nav-logo">
+            <a href="principal.php">
+                <img src="../img/logo.png" alt="Logo San Isidro" class="logo-nav">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="principal.php">Inicio</a></li> 
+            <li><a href="mis-reservas.php" class="activo">Mis Reservas</a></li>
+            <li><a href="../html/torneos.html">Torneos</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
+            <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenido-reservas">
+        <div class="cabecera-reservas">
+            <h1>Mis Reservas</h1>
+            <p>Gestiona tus próximas pistas y revisa tu historial.</p>
+        </div>
+
+        <?php if(isset($_GET['mensaje']) && $_GET['mensaje'] == 'borrado'): ?>
+            <div class="alerta-borrado">
+                La reserva ha sido cancelada correctamente y la pista vuelve a estar libre.
+            </div>
+        <?php endif; ?>
+
+        <div class="panel-reservas">
+            
+            <?php if ($resultado->num_rows > 0): ?>
+                
+                <?php while ($reserva = $resultado->fetch_assoc()): ?>
+                    
+                    <div class="tarjeta-reserva activa">
+                        <div class="estado-reserva"><?php echo htmlspecialchars($reserva['estado']); ?></div>
+                        
+                        <div class="datos-reserva">
+                            <div class="dato">
+                                <span class="icono"></span>
+                                <div>
+                                    <strong>Deporte</strong>
+                                    <p><?php echo htmlspecialchars($reserva['deporte_nombre']); ?></p>
+                                </div>
+                            </div>
+                            <div class="dato">
+                                <span class="icono"></span>
+                                <div>
+                                    <strong>Fecha</strong>
+                                    <p><?php echo date('d-m-Y', strtotime($reserva['fecha'])); ?></p>
+                                </div>
+                            </div>
+                            <div class="dato">
+                                <span class="icono"></span>
+                                <div>
+                                    <strong>Hora</strong>
+                                    <p><?php echo substr($reserva['hora'], 0, 5); ?> hs</p>
+                                </div>
+                            </div>
+                            <div class="dato">
+                                <span class="icono"></span>
+                                <div>
+                                    <strong>Pista</strong>
+                                    <p><?php echo htmlspecialchars($reserva['pista_nombre']); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="acciones-reserva">
+                            <form action="cancelar_reserva.php" method="POST">
+                                <input type="hidden" name="id_reserva" value="<?php echo $reserva['id_reserva']; ?>">
+                                <button type="submit" class="btn-secundario">Cancelar Reserva</button>
+                            </form>
+                        </div>
+                    </div>
+
+                <?php endwhile; ?>
+
+            <?php else: ?>
+                
+                <div class="mensaje-no-reservas" style="text-align: center; padding: 40px; color: #666;">
+                    <p style="font-size: 18px; font-weight: bold;">No tienes ninguna pista reservada actualmente.</p>
+                    <p style="margin-top: 10px;">¡Anímate a reservar tu primera pista desde el panel de inicio!</p>
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+    </main>
+
+   <footer class="pie-pagina">
+        <div class="caja-footer">
+            <div class="columna-footer">
+                <a href="principal.php">
+                    <img src="../img/logo.png" alt="Logo San Isidro" class="logo-footer">
+                </a>
+                <p>El mejor club deportivo para disfrutar, competir y mejorar tu nivel en instalaciones de primera calidad.</p>
+            </div>
+            <div class="columna-footer">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="principal.php">Inicio</a></li>
+                    <li><a href="mis-reservas.php">Mis Reservas</a></li>
+                    <li><a href="../html/torneos.html">Torneos</a></li>
+                    <li><a href="perfil.php">Perfil</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>📍 Calle Rda. Palmeras, 123</p>
+                <p>📞 600 123 456</p>
+                <p>✉️ info@sanisidro.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Pistas Deportivas San Isidro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+<?php $conexion->close(); ?>

@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
                   WHERE id_usuario = '$id_usuario'";
 
     if ($conexion->query($sql_update) === TRUE) {
-        // Usamos solo clases CSS, nada de estilos en línea
         $mensaje = "<div class='mensaje-alerta exito'>¡Perfil actualizado con éxito!</div>";
         $_SESSION['nombre'] = $nombre;
     } else {
@@ -30,22 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
     }
 }
 
-// 2. Extraer datos del usuario actual
+// traer datos del usuario actual
 $sql_usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
 $resultado = $conexion->query($sql_usuario);
 $datos_user = $resultado->fetch_assoc();
 
-// 3. Extraer estadísticas reales (Preparado para cuando creemos las tablas)
-// Por ahora las forzamos a 0 para que no dé error la consulta
-$total_reservas = 0; 
-/* Futura consulta: 
-$sql_res = "SELECT COUNT(*) as total FROM reservas WHERE id_usuario = '$id_usuario'";
-... */
+// traer estadísticas reales de la base de datos
 
-$total_torneos = 0;
-/* Futura consulta: 
-$sql_tor = "SELECT COUNT(*) as total FROM torneos_inscripciones WHERE id_usuario = '$id_usuario'";
-... */
+// Contar las reservas del usuario
+$sql_reservas = "SELECT COUNT(*) as total FROM reservas WHERE id_usuario = '$id_usuario'";
+$resultado_reservas = $conexion->query($sql_reservas);
+$fila_reservas = $resultado_reservas->fetch_assoc();
+$total_reservas = $fila_reservas['total'];
+
+// Contar los torneos a los que está inscrito el usuario
+$sql_torneos = "SELECT COUNT(*) as total FROM inscripciones_torneos WHERE id_usuario = '$id_usuario'";
+$resultado_torneos = $conexion->query($sql_torneos);
+$fila_torneos = $resultado_torneos->fetch_assoc();
+$total_torneos = $fila_torneos['total'];
 
 $conexion->close();
 ?>
@@ -71,7 +72,7 @@ $conexion->close();
         </div>
         <ul class="nav-links">
             <li><a href="principal.php">Inicio</a></li> 
-            <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
+            <li><a href="mis-reservas.php">Mis Reservas</a></li>
             <li><a href="../html/torneos.html">Torneos</a></li>
             <li><a href="perfil.php" class="activo">Perfil</a></li>
             <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>

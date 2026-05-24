@@ -31,7 +31,7 @@ $nombre_usuario = $_SESSION['nombre'];
         </div>
         <ul class="nav-links">
             <li><a href="#inicio-pagina">Inicio</a></li> 
-            <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
+            <li><a href="mis-reservas.php">Mis Reservas</a></li>
             <li><a href="../html/torneos.html">Torneos</a></li>
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>
@@ -60,7 +60,7 @@ $nombre_usuario = $_SESSION['nombre'];
                     <div class="info-deporte">
                         <h3>Fútbol</h3>
                         <p>Campos de césped artificial de última generación</p>
-                        <a href="futbol.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="futbol.php" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@ $nombre_usuario = $_SESSION['nombre'];
                     <div class="info-deporte">
                         <h3>Pádel</h3>
                         <p>Muro y Cristal de última generación</p>
-                        <a href="../html/padel.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="padel.php" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@ $nombre_usuario = $_SESSION['nombre'];
                     <div class="info-deporte">
                         <h3>Tenis</h3>
                         <p>Tierra batida y superficies rápidas</p>
-                        <a href="../html/tenis.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="tenis.php" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@ $nombre_usuario = $_SESSION['nombre'];
                     <div class="info-deporte">
                         <h3>Baloncesto</h3>
                         <p>Pabellón cubierto y canastas exteriores</p>
-                        <a href="../html/baloncesto.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="baloncesto.php" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@ $nombre_usuario = $_SESSION['nombre'];
                     <div class="info-deporte">
                         <h3>Natación</h3>
                         <p>Piscina olímpica y clases dirigidas</p>
-                        <a href="../html/natacion.html" class="btn-reservar">Ver Pistas</a>
+                        <a href="natacion.php" class="btn-reservar">Ver Pistas</a>
                     </div>
                 </div>
 
