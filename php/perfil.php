@@ -62,22 +62,7 @@ $conexion->close();
 </head>
 <body>
 
-    <div id="inicio-pagina"></div>
-    
-    <nav class="caja-nav"> 
-        <div class="nav-logo">
-            <a href="principal.php">
-                <img src="../img/logo.png" alt="Logo San Isidro" class="logo-nav">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="principal.php">Inicio</a></li> 
-            <li><a href="mis-reservas.php">Mis Reservas</a></li>
-            <li><a href="../html/torneos.html">Torneos</a></li>
-            <li><a href="perfil.php" class="activo">Perfil</a></li>
-            <li><a href="logout.php" class="btn-salir">Cerrar Sesión</a></li>
-        </ul>
-    </nav>
+    <?php include '../html/nav.html'; ?>
 
     <main class="contenido-perfil">
         
@@ -166,34 +151,7 @@ $conexion->close();
 
     </main>
 
-    <footer class="pie-pagina">
-        <div class="caja-footer">
-            <div class="columna-footer">
-                <a href="principal.php">
-                    <img src="../img/logo.png" alt="Logo San Isidro" class="logo-footer">
-                </a>
-                <p>El mejor club deportivo para disfrutar, competir y mejorar tu nivel en instalaciones de primera calidad.</p>
-            </div>
-            <div class="columna-footer">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="principal.php">Inicio</a></li>
-                    <li><a href="../html/mis-reservas.html">Mis Reservas</a></li>
-                    <li><a href="../html/torneos.html">Torneos</a></li>
-                    <li><a href="perfil.php">Perfil</a></li>
-                </ul>
-            </div>
-            <div class="columna-footer">
-                <h4>Contacto</h4>
-                <p>📍 Calle Rda. Palmeras, 123</p>
-                <p>📞 600 123 456</p>
-                <p>✉️ info@sanisidro.com</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 Pistas Deportivas San Isidro. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <?php include '../html/footer.html'; ?>
 
 </body>
 </html>
