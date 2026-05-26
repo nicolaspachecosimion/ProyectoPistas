@@ -142,3 +142,168 @@
     background-color: #000;
     color: #f39c12;
 }
+
+/* --- ESTILOS DE LA CUADRÍCULA DE TORNEOS --- */
+
+.contenido-principal {
+    padding: 40px 20px;
+    max-width: 1200px !important; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid-torneos {
+    display: grid !important;
+    /* Obligamos a que las tarjetas midan al menos 300px y rellenen el espacio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; 
+    gap: 30px;
+    width: 100%;
+    align-items: start; /* Evita que las tarjetas se estiren a lo alto si una tiene más texto */
+}
+
+.tarjeta-torneo {
+    width: 100% !important;
+    margin: 0 !important;
+    
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera-tarjeta {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cabecera-tarjeta h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.deporte-tag {
+    margin: 5px 0 0 0;
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.cuerpo-tarjeta {
+    padding: 20px;
+    flex-grow: 1; /* Empuja el botón siempre hacia abajo */
+}
+
+.cuerpo-tarjeta ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.pie-tarjeta {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.btn-inscribir {
+    display: inline-block;
+    text-align: center; 
+    background-color: #f39c12; 
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    width: 100%; 
+}
+
+.btn-inscribir:hover {
+    background-color: #000; 
+    color: #f39c12; 
+}
+
+.mensaje-vacio {
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* --- ESTILOS DE INSCRIPCIÓN --- */
+
+/* Mensaje verde al inscribirse con éxito */
+.alerta-exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    animation: aparecer 0.4s ease-out;
+}
+
+/* Botón cuando el usuario ya está inscrito */
+.btn-inscrito {
+    background-color: #2ecc71; /* Verde esmeralda */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    cursor: default;
+}
+
+/* Evitamos que el botón verde cambie a negro al pasar el ratón */
+.btn-inscrito:hover {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* --- ESTILOS PARA CANCELAR TORNEO --- */
+
+.btn-cancelar-torneo {
+    background-color: transparent;
+    color: #e74c3c; /* Rojo clásico de cancelar */
+    border: 2px solid #e74c3c;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar-torneo:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.formulario-cancelar {
+    margin-top: 12px; /* Separa el botón de cancelar del botón verde */
+}
+
+/* Mensaje rojo al cancelar con éxito */
+.alerta-cancelado {
+    background-color: #fce4e4;
+    color: #c0392b;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    animation: aparecer 0.4s ease-out;
+}
