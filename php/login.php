@@ -69,15 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" id="password" name="password" required placeholder="Ingrese su contraseña">
             </div>
 
-            <div class="botones-rrss">
-                <button type="button" class="btn-google">
-                    <i class="google"></i> Google
-                </button>
-                <button type="button" class="btn-facebook">
-                    <i class="facebook"></i> Facebook
-                </button>
-            </div>
-
             <button type="submit" class="btn-sesion">Iniciar Sesión</button>
             
             <div class="links">
@@ -90,4 +81,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
-

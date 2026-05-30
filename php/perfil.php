@@ -7,9 +7,12 @@ if (!isset($_SESSION['id_usuario'])) {
 
 include 'conexion.php';
 $id_usuario = $_SESSION['id_usuario'];
-$mensaje = "";
 
-// 1. Guardar cambios en la Base de Datos
+// Creamos dos variables independientes para los mensajes
+$mensaje_perfil = "";
+$mensaje_seguridad = "";
+
+// 1. Guardar cambios en los Datos Personales
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
@@ -22,10 +25,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
                   WHERE id_usuario = '$id_usuario'";
 
     if ($conexion->query($sql_update) === TRUE) {
-        $mensaje = "<div class='mensaje-alerta exito'>¡Perfil actualizado con éxito!</div>";
+        $mensaje_perfil = "<div class='mensaje-alerta exito'>¡Perfil actualizado con éxito!</div>";
         $_SESSION['nombre'] = $nombre;
     } else {
-        $mensaje = "<div class='mensaje-alerta error'>Error: " . $conexion->error . "</div>";
+        $mensaje_perfil = "<div class='mensaje-alerta error'>Error: " . $conexion->error . "</div>";
+    }
+}
+
+// 2. Guardar cambios en la Contraseña
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pass_actual'])) {
+    $pass_actual = $_POST['pass_actual'];
+    $pass_nueva = $_POST['pass_nueva'];
+
+    $sql_verificar = "SELECT password FROM usuarios WHERE id_usuario = '$id_usuario'";
+    $resultado_verificar = $conexion->query($sql_verificar);
+    $fila_verificar = $resultado_verificar->fetch_assoc();
+
+    if ($fila_verificar['password'] == $pass_actual) {
+        $sql_update_pass = "UPDATE usuarios SET password = '$pass_nueva' WHERE id_usuario = '$id_usuario'";
+        if ($conexion->query($sql_update_pass) === TRUE) {
+            $mensaje_seguridad = "<div class='mensaje-alerta exito'>¡Contraseña actualizada con éxito!</div>";
+        } else {
+            $mensaje_seguridad = "<div class='mensaje-alerta error'>Error al actualizar la contraseña: " . $conexion->error . "</div>";
+        }
+    } else {
+        $mensaje_seguridad = "<div class='mensaje-alerta error'>La contraseña actual no es correcta.</div>";
     }
 }
 
@@ -33,8 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
 $sql_usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
 $resultado = $conexion->query($sql_usuario);
 $datos_user = $resultado->fetch_assoc();
-
-// traer estadísticas reales de la base de datos
 
 // Contar las reservas del usuario
 $sql_reservas = "SELECT COUNT(*) as total FROM reservas WHERE id_usuario = '$id_usuario'";
@@ -68,7 +90,7 @@ $conexion->close();
         
         <div class="cabecera-perfil">
             <h1>Mi Perfil</h1>
-            <p>Gestiona tus datos personales y preferencias de la cuenta.</p>
+            <p>Gestiona tus datos personales y preferences de la cuenta.</p>
         </div>
 
         <div class="grid-perfil">
@@ -95,7 +117,7 @@ $conexion->close();
                 <div class="caja-formulario">
                     <h2>Datos Personales</h2>
                     
-                    <?php echo $mensaje; ?>
+                    <?php echo $mensaje_perfil; ?>
 
                     <form action="perfil.php" method="POST" class="form-editar">
                         <div class="grupo-input">
@@ -130,18 +152,21 @@ $conexion->close();
 
                 <div class="caja-formulario form-seguridad">
                     <h2>Seguridad</h2>
-                    <form action="#" class="form-editar">
+                    
+                    <?php echo $mensaje_seguridad; ?>
+
+                    <form action="perfil.php" method="POST" class="form-editar">
                         <div class="grupo-input">
                             <label for="pass-actual">Contraseña Actual</label>
-                            <input type="password" id="pass-actual" placeholder="Ingresa tu contraseña actual">
+                            <input type="password" id="pass-actual" name="pass_actual" placeholder="Ingresa tu contraseña actual" required>
                         </div>
                         
                         <div class="grupo-input">
                             <label for="pass-nueva">Nueva Contraseña</label>
-                            <input type="password" id="pass-nueva" placeholder="Escribe tu nueva contraseña">
+                            <input type="password" id="pass-nueva" name="pass_nueva" placeholder="Escribe tu nueva contraseña" required>
                         </div>
 
-                        <button type="button" class="btn-guardar btn-secundario">Actualizar Contraseña</button>
+                        <button type="submit" class="btn-guardar btn-secundario">Actualizar Contraseña</button>
                     </form>
                 </div>
 

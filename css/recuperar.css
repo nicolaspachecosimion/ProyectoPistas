@@ -126,3 +126,37 @@ input[type="email"]:focus {
     color: #d68910;
     text-decoration: underline;
 }
+
+/* ESTILOS PARA MENSAJES Y ÉXITO (Sustituyendo inline styles) */
+
+.msg-error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.subtitulo-exito {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.bloque-exito {
+    padding: 20px 0;
+}
+
+.titulo-exito {
+    color: #2ecc71;
+    margin-bottom: 15px;
+}
+
+.texto-exito {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.btn-enlace {
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
