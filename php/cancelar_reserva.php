@@ -12,14 +12,14 @@ include 'conexion.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_reserva'])) {
     
     $id_reserva = $_POST['id_reserva'];
-    $id_usuario = $_SESSION['id_usuario']; // El usuario que ha iniciado sesión
+    $id_usuario = $_SESSION['id_usuario'];
 
-    // BORRADO SEGURO: Borramos la reserva SOLO si pertenece a este usuario
+    // Borramos la reserva solo si pertenece a este usuario
     $sql_delete = "DELETE FROM reservas WHERE id_reserva = '$id_reserva' AND id_usuario = '$id_usuario'";
 
     if ($conexion->query($sql_delete) === TRUE) {
         // Si se borra con éxito, lo devolvemos a la página de reservas
-        // Le pasamos un aviso por la URL (?mensaje=borrado) por si luego quieres mostrar un mensajito verde
+        // Le pasamos un aviso por la URL (?mensaje=borrado)
         header("Location: mis-reservas.php?mensaje=borrado");
         exit();
     } else {

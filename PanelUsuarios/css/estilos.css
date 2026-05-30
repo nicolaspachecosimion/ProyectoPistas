@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* --- FORMULARIOS (COMPARTIDOS) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+/* --- BOTONES (COMPARTIDOS) --- */
+.btn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+
+.btn-principal { background-color: #3498db; width: 100%; }
+.btn-principal:hover { background-color: #2980b9; }
+
+.btn-secundario { background-color: #95a5a6; font-size: 14px; }
+.btn-secundario:hover { background-color: #7f8c8d; }
+
+.btn-add { 
+    background-color: #2ed573; 
+}
+.btn-add:hover { 
+    background-color: #20bf6b; 
+}
+
+.btn-update { 
+    background-color: #ffb142; 
+    font-size: 14px; 
+    padding: 6px 12px; 
+    color: #fff; 
+}
+.btn-update:hover { 
+    background-color: #cc8e35; 
+}
+
+.btn-delete { 
+    background-color: #ff4757; 
+    font-size: 14px; 
+    padding: 6px 12px; 
+}
+.btn-delete:hover { 
+    background-color: #ff2a3d; 
+}
+
+/* --- BOTÓN CERRAR SESIÓN --- */
+.btn-cerrar_sesion { 
+    background-color: #95a5a6;
+    font-size: 14px; 
+}
+
+.btn-cerrar_sesion:hover { 
+    background-color: #7f8c8d; 
+}

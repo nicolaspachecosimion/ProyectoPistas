@@ -1,0 +1,109 @@
+.panel-body {
+    padding: 40px 20px;
+}
+
+.panel-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    color: #2c3e50;
+}
+
+/* --- TABLA --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+table tr:hover { background-color: #f1f1f1; }
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.contenedor-cerrar-sesion {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* ESTILOS DEL BUSCADOR */
+.buscador-container {
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-busqueda {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.form-busqueda input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 250px;
+}
+
+/* ESTILOS DE LA PAGINACIÓN */
+.paginacion {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-paginacion {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+.texto-admin {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.texto-centrado {
+    text-align: center;
+}
+.btn-buscar {
+    width: auto;
+}

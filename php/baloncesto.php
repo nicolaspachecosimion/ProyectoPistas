@@ -6,7 +6,7 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 include 'conexion.php';
 
-// Obtener las pistas de Baloncesto (id_deporte = 4)
+// Obtener las pistas de Baloncesto
 $sql_pistas = "SELECT * FROM pistas WHERE id_deporte = 4";
 $resultado_pistas = $conexion->query($sql_pistas);
 
@@ -109,6 +109,6 @@ $horario_club = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', 
     </main>
 
     <?php include '../html/footer.html'; ?>
-    
+
 </body>
 </html>
