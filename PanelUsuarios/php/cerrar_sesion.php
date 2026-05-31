@@ -5,7 +5,7 @@ session_start();
 // Borramos todas las variables guardadas (como el nombre y el rol)
 session_unset(); 
 
-// Destruimos la sesión para que nadie pueda volver atrás
+// Destruimos la sesión
 session_destroy(); 
 
 // Redirigimos específicamente al login de esta misma carpeta
