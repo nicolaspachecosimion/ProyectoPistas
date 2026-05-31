@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_torneo'])) {
         $sql_insert = "INSERT INTO inscripciones_torneos (id_torneo, id_usuario) VALUES ('$id_torneo', '$id_usuario')";
         
         if ($conexion->query($sql_insert) === TRUE) {
-            // Éxito: lo mandamos de vuelta a torneos
+            // Lo mandamos de vuelta a torneos
             header("Location: torneos.php?mensaje=inscrito_ok");
             exit();
         } else {

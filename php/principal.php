@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Si la variable de sesión 'id_usuario' no existe, es que no han pasado por el login
 if (!isset($_SESSION['id_usuario'])) {
     // Redirige al login
     header("Location: login.php");

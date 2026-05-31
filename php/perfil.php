@@ -12,7 +12,7 @@ $id_usuario = $_SESSION['id_usuario'];
 $mensaje_perfil = "";
 $mensaje_seguridad = "";
 
-// 1. Guardar cambios en los Datos Personales
+// Guardar cambios en los Datos Personales
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'])) {
     }
 }
 
-// 2. Guardar cambios en la Contraseña
+// Guardar cambios en la Contraseña
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pass_actual'])) {
     $pass_actual = $_POST['pass_actual'];
     $pass_nueva = $_POST['pass_nueva'];
@@ -90,7 +90,7 @@ $conexion->close();
         
         <div class="cabecera-perfil">
             <h1>Mi Perfil</h1>
-            <p>Gestiona tus datos personales y preferences de la cuenta.</p>
+            <p>Gestiona tus datos personales de la cuenta.</p>
         </div>
 
         <div class="grid-perfil">

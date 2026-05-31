@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_torneo'])) {
     $id_torneo = $_POST['id_torneo'];
     $id_usuario = $_SESSION['id_usuario'];
 
-    // 1. Por seguridad: Comprobamos que no esté ya inscrito
+    // Comprobar que no esté ya inscrito
     $sql_check = "SELECT * FROM inscripciones_torneos WHERE id_torneo = '$id_torneo' AND id_usuario = '$id_usuario'";
     $resultado_check = $conexion->query($sql_check);
     if ($resultado_check->num_rows > 0) {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_torneo'])) {
         exit();
     }
 
-    // 2. Sacamos los datos reales del torneo para mostrarlos en el resumen
+    // Sacar los datos reales del torneo para mostrarlos en el resumen
     $sql_torneo = "SELECT t.*, d.nombre AS nombre_deporte 
                    FROM torneos t 
                    INNER JOIN deportes d ON t.id_deporte = d.id_deporte 
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_torneo'])) {
 
                     <hr class="separador">
                     
-                    <h4>💳 Tarjeta de Crédito / Débito (Pasarela Simulada)</h4>
+                    <h4>💳 Tarjeta de Crédito / Débito</h4>
                     
                     <div class="grupo-input">
                         <label for="titular">Titular de la tarjeta</label>
